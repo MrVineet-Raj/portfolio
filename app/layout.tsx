@@ -22,7 +22,6 @@ export const metadata: Metadata = {
       "Portfolio of Vineet Raj, a full-stack developer specializing in MERN Stack, Rust, Blockchain, React Native, and AI-powered applications.",
     siteName: "Vineet Raj Portfolio",
   },
-  generator: "v0.dev",
 };
 
 export default function RootLayout({
