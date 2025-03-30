@@ -38,6 +38,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          {/* unnecessary */}
           <div className="flex min-h-screen flex-col">
             <Header />
             {children}
