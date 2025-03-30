@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Project
+
+## Overview
+
+This is a modern portfolio website built with Next.js and styled with Tailwind CSS. The project features a responsive design with a customizable dark/light theme and smooth animations.
+
+## Technologies Used
+
+- [Next.js](https://nextjs.org/) - React framework
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- [OKLCH Color System](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklch) - For modern color representation
+- [Geist Font](https://vercel.com/font) - Typography
+
+## Features
+
+- Responsive design
+- Dark/light theme with custom OKLCH color system
+- Smooth animations and transitions
+- Accessible UI components
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js (version 16.x or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/yourusername/portfolio-temp.git
+cd portfolio-temp
+```
+
+2. Install dependencies
+
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Run the development server
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Customization
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Modifying the Theme
 
-## Learn More
+The color theme is defined in `app/globals.css`. You can modify the OKLCH values to customize the appearance.
 
-To learn more about Next.js, take a look at the following resources:
+### Adding Content
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Update the content in the page components located in the `app` directory.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
