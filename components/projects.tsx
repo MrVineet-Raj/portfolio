@@ -68,7 +68,7 @@ export default function Projects() {
       demo: "https://imaginify.unknownbug.tech",
     },
     {
-      id: 2,
+      id: 3,
       title: "AstraFin",
       description:
         "A personal finance management web app that helps users track their expenses, set budgets, and achieve their financial goals.",
@@ -86,7 +86,7 @@ export default function Projects() {
       demo: "https://astrafin.unknownbug.tech",
     },
     {
-      id: 6,
+      id: 4,
       title: "Snippet Wallet",
       description:
         "Chrome extension to save and organize code snippets with syntax highlighting",
@@ -104,7 +104,7 @@ export default function Projects() {
       demo: "https://snippetwallet.unknownbug.tech",
     },
     {
-      id: 3,
+      id: 5,
       title: "OrgMonitor",
       description:
         "A organization github repo monitoring tool that tracks and displays the status of repositories in a user-friendly interface.",
@@ -115,7 +115,7 @@ export default function Projects() {
       demo: "https://orgmonitor.unknownbug.tech",
     },
     {
-      id: 4,
+      id: 6,
       title: "Yum Yard",
       description:
         "Interactive resume builder with customizable templates and export options",
