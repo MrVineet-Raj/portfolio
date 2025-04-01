@@ -36,8 +36,39 @@ export default function Projects() {
   const [activeTab, setActiveTab] = useState("all");
 
   const projects: Project[] = [
+    // {
+    //   id: 1,
+    //   title: "BrainBlitz",
+    //   description:
+    //     "Blockchain-based quiz platform with token rewards for participants",
+    //   image: "/placeholder.svg?height=300&width=500",
+    //   category: "blockchain",
+    //   technologies: ["Solidity", "ethers.js", "React", "Hardhat"],
+    //   github: "https://github.com/MrVineetRaj/BrainBlitz",
+    //   demo: "https://brainblitz.demo.com",
+    // },
     {
-      id: -1,
+      id: 2,
+      title: "Imaginify",
+      description:
+        "AI powered image editing tool that allows users to edit images using single click or  natural language commands. powered by Cloudinary and XION as all the transactions are done on Blockchain",
+      image: "/images/blockchain/imaginify.png",
+      category: "blockchain",
+      technologies: [
+        "Next Js",
+        "Tailwind CSS",
+        "MongoDB",
+        "Shadcn UI",
+        "Cloudinary",
+        "XION",
+        "Google Auto Tags",
+      ],
+      github:
+        "https://github.com/MrVineetRaj/NextJs-Project/tree/main/AstraFin",
+      demo: "https://imaginify.unknownbug.tech",
+    },
+    {
+      id: 2,
       title: "AstraFin",
       description:
         "A personal finance management web app that helps users track their expenses, set budgets, and achieve their financial goals.",
@@ -55,40 +86,7 @@ export default function Projects() {
       demo: "https://astrafin.unknownbug.tech",
     },
     {
-      id: 1,
-      title: "OrgMonitor",
-      description:
-        "A organization github repo monitoring tool that tracks and displays the status of repositories in a user-friendly interface.",
-      image: "/images/web/Org Monitor.png",
-      category: "web",
-      technologies: ["React", "Appwrite"],
-      github: "https://github.com/MrVineetRaj/React-Projects",
-      demo: "https://orgmonitor.unknownbug.tech",
-    },
-    {
-      id: 2,
-      title: "Yum Yard",
-      description:
-        "Interactive resume builder with customizable templates and export options",
-      image: "/images/web/Yum Yard.png",
-      category: "web",
-      technologies: ["Next.js", "Tailwind CSS", "Firebase"],
-      github: "https://github.com/MrVineetRaj/React-Projects",
-      demo: "https://yumyard.unknownbug.tech/",
-    },
-    // {
-    //   id: 3,
-    //   title: "BrainBlitz",
-    //   description:
-    //     "Blockchain-based quiz platform with token rewards for participants",
-    //   image: "/placeholder.svg?height=300&width=500",
-    //   category: "blockchain",
-    //   technologies: ["Solidity", "ethers.js", "React", "Hardhat"],
-    //   github: "https://github.com/MrVineetRaj/BrainBlitz",
-    //   demo: "https://brainblitz.demo.com",
-    // },
-    {
-      id: 4,
+      id: 6,
       title: "Snippet Wallet",
       description:
         "Chrome extension to save and organize code snippets with syntax highlighting",
@@ -105,9 +103,30 @@ export default function Projects() {
         "https://github.com/MrVineetRaj/chrome-extension/tree/master/Snippet%20Wallet",
       demo: "https://snippetwallet.unknownbug.tech",
     },
-
     {
-      id: 5,
+      id: 3,
+      title: "OrgMonitor",
+      description:
+        "A organization github repo monitoring tool that tracks and displays the status of repositories in a user-friendly interface.",
+      image: "/images/web/Org Monitor.png",
+      category: "web",
+      technologies: ["React", "Appwrite"],
+      github: "https://github.com/MrVineetRaj/React-Projects",
+      demo: "https://orgmonitor.unknownbug.tech",
+    },
+    {
+      id: 4,
+      title: "Yum Yard",
+      description:
+        "Interactive resume builder with customizable templates and export options",
+      image: "/images/web/Yum Yard.png",
+      category: "web",
+      technologies: ["Next.js", "Tailwind CSS", "Firebase"],
+      github: "https://github.com/MrVineetRaj/React-Projects",
+      demo: "https://yumyard.unknownbug.tech/",
+    },
+    {
+      id: 7,
       title: "Xora",
       description:
         "Landing page of a SaaS product with a focus on user experience and design",
@@ -118,7 +137,7 @@ export default function Projects() {
       demo: "https://xora.unknownbug.tech/",
     },
     {
-      id: 6,
+      id: 8,
       title: "Kanban Board",
       description:
         "A simple Kanban board application built using React and Tailwind CSS. It allows users to create, edit, and delete tasks.",
@@ -129,7 +148,7 @@ export default function Projects() {
       demo: "https://jsprojects.unknownbug.tech/kanban",
     },
     {
-      id: 7,
+      id: 9,
       title: "Tic Tac Toe",
       description:
         "A simple Tic Tac Toe game built using HTML, CSS, and JavaScript. Play against a friend or the computer.",
