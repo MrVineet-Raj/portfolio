@@ -11,7 +11,6 @@ import Image from "next/image";
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Animated background effect
   useEffect(() => {
     if (!containerRef.current) return;
 
@@ -28,7 +27,7 @@ export default function Hero() {
   }, []);
 
   const skills = [
-    "Full-Stack Development",
+    "Full-Stack Developer",
     "Blockchain",
     "Generative AI",
     "DevOps",

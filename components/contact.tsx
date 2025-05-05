@@ -13,6 +13,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Github, Linkedin, Twitter, Calendar } from "lucide-react";
 import Link from "next/link";
 import toast from "react-hot-toast";
+import axios from "axios";
 
 export default function Contact() {
   const ref = useRef(null);
@@ -35,43 +36,29 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      toast.success("Message sent! Thank you for reaching out.");
-      setFormData({ name: "", email: "", message: "" });
-      setIsSubmitting(false);
-    }, 1500);
+    // Simulate form submissio
+    try {
+      const res = await axios.post("/api/hire-me", {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+      });
 
-    // In a real implementation, you would send the form data to a server
-    // try {
-    //   const response = await fetch('/api/contact', {
-    //     method: 'POST',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify(formData)
-    //   });
-    //   const data = await response.json();
-    //   if (data.success) {
-    //     toast({
-    //       title: "Message sent!",
-    //       description: "Thank you for your message. I'll get back to you soon.",
-    //     });
-    //     setFormData({ name: "", email: "", message: "" });
-    //   } else {
-    //     toast({
-    //       title: "Error",
-    //       description: data.message || "Something went wrong. Please try again.",
-    //       variant: "destructive",
-    //     });
-    //   }
-    // } catch (error) {
-    //   toast({
-    //     title: "Error",
-    //     description: "Something went wrong. Please try again.",
-    //     variant: "destructive",
-    //   });
-    // } finally {
-    //   setIsSubmitting(false);
-    // }
+      if (res?.data.success) {
+        toast.success("Message sent! Thank you for reaching out.");
+        setFormData({ name: "", email: "", message: "" });
+        setIsSubmitting(false);
+        return;
+      }
+
+      toast.error(res.data.message || "Error sending message. Please try again later.");
+      setIsSubmitting(false);
+      return;
+    } catch (error) {
+      toast.error("Error sending message. Please try again later.");
+      setIsSubmitting(false);
+      return;
+    }
   };
 
   const socialLinks = [
