@@ -43,6 +43,7 @@
     "embla-carousel-react": "^8.5.2",
     "framer-motion": "^12.6.2",
     "input-otp": "^1.4.2",
+    "leetcode-query": "^2.0.0",
     "lucide-react": "^0.485.0",
     "mailgen": "^2.0.29",
     "next": "15.2.4",
