@@ -14,7 +14,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Github, ExternalLink, FileText } from "lucide-react";
+import { Github, ExternalLink, FileText, VideoIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -28,6 +28,7 @@ type Project = {
   github?: string;
   demo?: string;
   blog?: string;
+  video?: string;
 };
 
 export default function Projects() {
@@ -36,17 +37,26 @@ export default function Projects() {
   const [activeTab, setActiveTab] = useState("all");
 
   const projects: Project[] = [
-    // {
-    //   id: 1,
-    //   title: "BrainBlitz",
-    //   description:
-    //     "Blockchain-based quiz platform with token rewards for participants",
-    //   image: "/placeholder.svg?height=300&width=500",
-    //   category: "blockchain",
-    //   technologies: ["Solidity", "ethers.js", "React", "Hardhat"],
-    //   github: "https://github.com/MrVineetRaj/BrainBlitz",
-    //   demo: "https://brainblitz.demo.com",
-    // },
+    {
+      id: 1,
+      title: "Morphix",
+      description:
+        "A AI powered Video Editing PLatform that allows users to edit videos using single click or natural language commands. powered by UploadCare,Cloudinary,clerk and falAi",
+      image: "/images/web/Morphix.png",
+      category: "web",
+      technologies: [
+        "Next Js",
+        "Tailwind CSS",
+        "MongoDB",
+        "Shadcn UI",
+        "UploadCare",
+        "Cloudinary",
+        "Clerk",
+        "FalAi",
+      ],
+      github: "https://github.com/MrVineetRaj/morphix",
+      video: "https://www.youtube.com/watch?v=1doX2SVGFWw",
+    },
     {
       id: 2,
       title: "Imaginify",
@@ -65,7 +75,8 @@ export default function Projects() {
       ],
       github:
         "https://github.com/MrVineetRaj/NextJs-Project/tree/main/AstraFin",
-      demo: "https://imaginify.unknownbug.tech",
+      // demo: "https://imaginify.unknownbug.tech",
+      video: "https://youtu.be/lPXJAAPQf4I?si=cdAZQbchyAxe13CR",
     },
     {
       id: 3,
@@ -269,6 +280,18 @@ export default function Projects() {
                           >
                             <FileText className="h-4 w-4 mr-2" />
                             Blog
+                          </Link>
+                        </Button>
+                      )}
+                      {project.video && (
+                        <Button size="sm" variant="outline" asChild>
+                          <Link
+                            href={project.video}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <VideoIcon className="h-4 w-4 mr-2" />
+                            Demo Video
                           </Link>
                         </Button>
                       )}
