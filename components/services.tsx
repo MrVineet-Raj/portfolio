@@ -49,14 +49,16 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="py-20">
-      <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center text-center mb-12">
+    <div className="w-full flex flex-col items-center border-b">
+    <section id="services" className="w-full max-w-[1400px]">
+      <div className="container">
+        <div className="flex flex-col items-center text-center border-x">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5 }}
             ref={ref}
+            className="border-x px-4 md:px-8 py-4"
           >
             <Badge className="mb-4">Services</Badge>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
@@ -69,7 +71,7 @@ export default function Services() {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -77,7 +79,7 @@ export default function Services() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="h-full">
+              <Card className="h-full rounded-none">
                 <CardHeader>
                   <div className="mb-4">{service.icon}</div>
                   <CardTitle>{service.title}</CardTitle>
@@ -109,6 +111,6 @@ export default function Services() {
           ))}
         </div>
       </div>
-    </section>
+    </section></div>
   );
 }

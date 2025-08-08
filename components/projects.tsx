@@ -177,132 +177,142 @@ export default function Projects() {
       : projects.filter((project) => project.category === activeTab);
 
   return (
-    <section id="projects" className="py-20">
-      <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center text-center mb-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5 }}
-            ref={ref}
-          >
-            <Badge className="mb-4 text-white">Projects</Badge>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-              My Recent Work
-            </h2>
-            <p className="text-muted-foreground max-w-[800px] mx-auto">
-              A collection of projects that showcase my skills and expertise in
-              various technologies.
-            </p>
-          </motion.div>
-        </div>
-
-        <Tabs
-          defaultValue="all"
-          className="w-full"
-          onValueChange={setActiveTab}
-        >
-          <div className="flex justify-center mb-8">
-            <TabsList>
-              <TabsTrigger value="all">All</TabsTrigger>
-              <TabsTrigger value="web">Web Apps</TabsTrigger>
-              <TabsTrigger value="blockchain">Blockchain</TabsTrigger>
-              <TabsTrigger value="extension">Extensions</TabsTrigger>
-            </TabsList>
+    <div className="w-full flex flex-col items-center border-b">
+      <section
+        id="projects"
+        className="max-w-[1400px] border-l border-r w-full"
+      >
+        <div className="container">
+          <div className="flex flex-col items-center text-center border-b ">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5 }}
+              ref={ref}
+              className="border-l py-8 px-4 border-r"
+            >
+              <Badge className="mb-4 text-white">Projects</Badge>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+                My Recent Work
+              </h2>
+              <p className="text-muted-foreground max-w-[800px] mx-auto">
+                A collection of projects that showcase my skills and expertise
+                in various technologies.
+              </p>
+            </motion.div>
           </div>
 
-          <TabsContent value={activeTab} className="mt-0">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredProjects.map((project, index) => (
-                <motion.div
-                  key={project.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
-                  <Card className="h-full flex flex-col overflow-hidden group">
-                    <div className="relative h-48 overflow-hidden">
-                      <Image
-                        src={project.image || "/placeholder.svg"}
-                        alt={project.title}
-                        fill
-                        className="object-cover transition-transform duration-300 group-hover:scale-105"
-                      />
-                    </div>
-                    <CardHeader>
-                      <CardTitle>{project.title}</CardTitle>
-                      <CardDescription>{project.description}</CardDescription>
-                    </CardHeader>
-                    <CardContent className="flex-grow">
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {project.technologies.map((tech, i) => (
-                          <Badge
-                            key={i}
-                            variant="secondary"
-                            className="text-xs"
-                          >
-                            {tech}
-                          </Badge>
-                        ))}
-                      </div>
-                    </CardContent>
-                    <CardFooter className="flex gap-2">
-                      {project.github && (
-                        <Button size="sm" variant="outline" asChild>
-                          <Link
-                            href={project.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <Github className="h-4 w-4 mr-2" />
-                            GitHub
-                          </Link>
-                        </Button>
-                      )}
-                      {project.demo && (
-                        <Button size="sm" variant="outline" asChild>
-                          <Link
-                            href={project.demo}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <ExternalLink className="h-4 w-4 mr-2" />
-                            Demo
-                          </Link>
-                        </Button>
-                      )}
-                      {project.blog && (
-                        <Button size="sm" variant="outline" asChild>
-                          <Link
-                            href={project.blog}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <FileText className="h-4 w-4 mr-2" />
-                            Blog
-                          </Link>
-                        </Button>
-                      )}
-                      {project.video && (
-                        <Button size="sm" variant="outline" asChild>
-                          <Link
-                            href={project.video}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <VideoIcon className="h-4 w-4 mr-2" />
-                            Demo Video
-                          </Link>
-                        </Button>
-                      )}
-                    </CardFooter>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-          </TabsContent>
-        </Tabs>
-      </div>
-    </section>
+            <Tabs
+              defaultValue="all"
+              className="w-full"
+              onValueChange={setActiveTab}
+            >
+              <div className="flex justify-center w-full py-2 border-b">
+                <TabsList>
+                  <TabsTrigger value="all">All</TabsTrigger>
+                  <TabsTrigger value="web">Web Apps</TabsTrigger>
+                  <TabsTrigger value="blockchain">Blockchain</TabsTrigger>
+                  <TabsTrigger value="extension">Extensions</TabsTrigger>
+                </TabsList>
+              </div>
+
+              <TabsContent value={activeTab} className="mt-0">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                  {filteredProjects.map((project, index) => (
+                    <motion.div
+                      key={project.id}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={isInView ? { opacity: 1, y: 0 } : {}}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                    >
+                      <Card className="h-full flex flex-col overflow-hidden group !rounded-none border-0 border-r border-b">
+                        <div className="relative h-64 overflow-hidden">
+                          <Image
+                            src={project.image || "/placeholder.svg"}
+                            alt={project.title}
+                            fill
+                            className=" transition-transform duration-300 group-hover:scale-105"
+                          
+                          />
+                        </div>
+                        <CardHeader>
+                          <CardTitle>{project.title}</CardTitle>
+                          <CardDescription>
+                            {project.description}
+                          </CardDescription>
+                        </CardHeader>
+                        <CardContent className="flex-grow">
+                          <div className="flex flex-wrap gap-2 mb-4">
+                            {project.technologies.map((tech, i) => (
+                              <Badge
+                                key={i}
+                                variant="secondary"
+                                className="text-xs"
+                              >
+                                {tech}
+                              </Badge>
+                            ))}
+                          </div>
+                        </CardContent>
+                        <CardFooter className="flex gap-2">
+                          {project.github && (
+                            <Button size="sm" variant="outline" asChild>
+                              <Link
+                                href={project.github}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                <Github className="h-4 w-4 mr-2" />
+                                GitHub
+                              </Link>
+                            </Button>
+                          )}
+                          {project.demo && (
+                            <Button size="sm" variant="outline" asChild>
+                              <Link
+                                href={project.demo}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                <ExternalLink className="h-4 w-4 mr-2" />
+                                Demo
+                              </Link>
+                            </Button>
+                          )}
+                          {project.blog && (
+                            <Button size="sm" variant="outline" asChild>
+                              <Link
+                                href={project.blog}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                <FileText className="h-4 w-4 mr-2" />
+                                Blog
+                              </Link>
+                            </Button>
+                          )}
+                          {project.video && (
+                            <Button size="sm" variant="outline" asChild>
+                              <Link
+                                href={project.video}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                <VideoIcon className="h-4 w-4 mr-2" />
+                                Demo Video
+                              </Link>
+                            </Button>
+                          )}
+                        </CardFooter>
+                      </Card>
+                    </motion.div>
+                  ))}
+                </div>
+              </TabsContent>
+            </Tabs>
+      
+        </div>
+      </section>
+    </div>
   );
 }

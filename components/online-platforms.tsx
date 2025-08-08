@@ -54,7 +54,7 @@ const CodingPlatformCard = ({
     <Link
       target="_blank"
       href={platformLinks[platformName.toLowerCase()]}
-      className="flex flex-col items-end justify-end p-4 border rounded-lg shadow-md relative min-h-24 pt-8 bg-accent/30 hover:bg-accent/50 transition-all duration-300 ease-in-out"
+      className="flex flex-col items-end justify-end p-4 border-r  shadow-md relative min-h-24 pt-8  hover:bg-accent/30 transition-all duration-300 ease-in-out"
     >
       <div className="flex gap-2 absolute top-2 left-2 items-center">
         <img
@@ -131,37 +131,39 @@ const OnlinePlatforms = () => {
   }, [leetCodeData, gitHubData, codeforcesData]);
 
   return (
-    <div className="grid sm:grid-cols-3 md:grid-cols-3 gap-4 p-4">
-      {loading ? (
-        <>
-          <Skeleton className="h-15 " />
-          <Skeleton className="h-15 " />
-          <Skeleton className="h-15 sm:hidden md:block " />
-        </>
-      ) : (
-        <>
-          {leetCodeData && (
-            <CodingPlatformCard
-              platformName="LeetCode"
-              totalSolved={leetCodeData?.totalSolved}
-              contestRating={leetCodeData?.contestRating}
-            />
-          )}
-          {gitHubData && (
-            <CodingPlatformCard
-              platformName="GitHub"
-              repoCnt={gitHubData?.repoCnt}
-            />
-          )}
-          {codeforcesData && (
-            <CodingPlatformCard
-              platformName="Codeforces"
-              totalSolved={codeforcesData?.totalSolved}
-              contestRating={codeforcesData?.contestRating}
-            />
-          )}
-        </>
-      )}
+    <div className="w-full flex flex-col items-center border-b">
+      <div className="grid sm:grid-cols-3 md:grid-cols-3  w-full max-w-[1400px] border-l">
+        {loading ? (
+          <>
+            <Skeleton className="h-15 " />
+            <Skeleton className="h-15 " />
+            <Skeleton className="h-15 sm:hidden md:block " />
+          </>
+        ) : (
+          <>
+            {leetCodeData && (
+              <CodingPlatformCard
+                platformName="LeetCode"
+                totalSolved={leetCodeData?.totalSolved}
+                contestRating={leetCodeData?.contestRating}
+              />
+            )}
+            {gitHubData && (
+              <CodingPlatformCard
+                platformName="GitHub"
+                repoCnt={gitHubData?.repoCnt}
+              />
+            )}
+            {codeforcesData && (
+              <CodingPlatformCard
+                platformName="Codeforces"
+                totalSolved={codeforcesData?.totalSolved}
+                contestRating={codeforcesData?.contestRating}
+              />
+            )}
+          </>
+        )}
+      </div>
     </div>
   );
 };

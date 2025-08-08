@@ -31,7 +31,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={rubik.className}>
+      <body>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -39,7 +39,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {/* unnecessary */}
-          <div className="flex min-h-screen flex-col">
+          <div className="flex min-h-screen flex-col w-full">
             <Header />
             {children}
             <Footer />
